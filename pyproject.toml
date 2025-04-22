@@ -23,9 +23,6 @@ compile = [
     "causal-conv1d>=1.5.0.post8",
 ]
 
-[tool.setuptools.packages.find]
-include = ["zonos", "zonos.backbone", "zonos.*"]
-
 [tool.uv]
 no-build-isolation-package = ["flash-attn", "mamba-ssm", "causal-conv1d"]
 
