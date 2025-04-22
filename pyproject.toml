@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling >= 1.26"]
-build-backend = "hatchling.build"
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "zonos"
@@ -23,12 +23,12 @@ compile = [
     "causal-conv1d>=1.5.0.post8",
 ]
 
+[tool.setuptools.packages.find]
+include = ["zonos", "zonos.backbone", "zonos.*"]
+
 [tool.uv]
 no-build-isolation-package = ["flash-attn", "mamba-ssm", "causal-conv1d"]
 
 [tool.ruff]
 line-length = 120
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/zonos"]
 
